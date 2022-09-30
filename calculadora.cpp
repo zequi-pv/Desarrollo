@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 
 int var1;
@@ -12,7 +13,8 @@ int suma(){
     cout<<"Ingresar un numero entero"<<"\n";
     cin>>var2;
         res = var1 + var2;
-        cout<<res<<"\n";
+        cout<<"El resultado es: "<<res<<"\n";
+        return res;
 }
 
 int resta(){
@@ -21,7 +23,8 @@ int resta(){
     cout<<"Ingresar un numero entero"<<"\n";
     cin>>var2;
     res = var1 - var2;
-    cout<<res<<"\n";
+    cout<<"El resultado es: "<<res<<"\n";
+    return res;
 }
 
 int multip(){
@@ -30,7 +33,8 @@ int multip(){
     cout<<"Ingresar un numero entero"<<"\n";
     cin>>var2;
     res = var1 * var2;
-    cout<<res<<"\n";
+    cout<<"El resultado es: "<<res<<"\n";
+    return res;
 }
 
 int division(){
@@ -40,9 +44,13 @@ int division(){
     cin>>var2;
     res = var1 / var2;
     cout<<"El resultado es: "<<res<<"\n";
+    return res;
 }
 void calcular(){
-        cout<<"Ingresar signo de la operacion a realizar"<<"\n";
+        bool seguir= true;
+        string respuesta; 
+        while(seguir==true){
+        cout<<"Ingresar signo de la operacion a realizar"<<"\n"<<"-- suma ( + ) | resta ( - ) | múltiplicación ( * ) | división ( / ) --"<<"\n";
         cin>>signo;
         if(signo == '+'){
             suma();
@@ -57,7 +65,17 @@ void calcular(){
             division();
         }
         else{
-            cout<<"ERROR"<<"\n";
+            cout<<"--ERROR--"<<"\n";
+        }
+        cout<<"Si desea terminar ingrese f"<<endl;
+        cout<<"Si desea continuar ingrese cualquier otro caracter"<<endl;
+        cin>>respuesta;
+        if(respuesta == "f"){
+            seguir =false;
+        }
+        else{
+            system("clear");
+        }
         }
 
     }
