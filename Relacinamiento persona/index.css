@@ -5,21 +5,26 @@
   box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
 }
+@media screen and(min-width:1024px){
+
+}
 body{
   background: #C08FFF;
-  overflow: hidden;
+  text-align: center;
+
 }
 ::selection{
   background: #8B31FF;
 }
 .container{
-  position: absolute;
+  position: relative;
   width: 470px;
-  min-width: 400px;
-  padding: 0 20px;
-  top: 50%;
-  left: 50%;
-transform: translate(-50%, -50%);
+  min-width: 300px;
+  top: 20px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 .wrapper{
   width: 100%;
@@ -151,3 +156,4 @@ form .signup-link a:hover{
 .file > label > i {
   padding-right: 5px;
 }
+
